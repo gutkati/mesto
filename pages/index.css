@@ -1,0 +1,15 @@
+@import "../vendor/normalize.css";
+@import "../vendor/fonts/inter.css";
+
+/*page*/
+
+@import "../blocks/page/page.css";
+@import "../blocks/page/__container/page__container.css";
+@import "../blocks/page/__header/page__header.css";
+
+
+/*header*/
+
+@import "../blocks/header/header.css";
+@import "../blocks/header/__logo/header__logo.css";
+@import "../blocks/header/__line/header__line.css";
