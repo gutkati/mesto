@@ -1,0 +1,16 @@
+.element__like {
+    width: 22px;
+    height: 19px;
+    border: none;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    background-image: url("../../../images/like-disabled.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px;
+    padding: 0;
+}
+
+.element__like:active {
+    background-image: url("../../../images/like-active.svg");
+}
