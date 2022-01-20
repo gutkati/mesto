@@ -9,7 +9,6 @@
 @import "../blocks/page/__content/page__content.css";
 @import '../blocks/page/__footer/page__footer.css';
 
-
 /*header*/
 
 @import "../blocks/header/header.css";
@@ -19,7 +18,6 @@
 /*content*/
 
 @import "../blocks/content/content.css";
-@import "../blocks/content/__profile/content__profile.css";
 @import "../blocks/content/__elements/content__elements.css";
 
 /*profile*/
@@ -48,3 +46,13 @@
 
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
+
+/*popup*/
+
+@import "../blocks/popup/popup.css";
+@import "../blocks/popup/_opened/popup_opened.css";
+@import "../blocks/popup/__container/popup__container.css";
+@import "../blocks/popup/__close/popup__close.css";
+@import "../blocks/popup/__title/popup__title.css";
+@import "../blocks/popup/__input/popup__input.css";
+@import "../blocks/popup/__save/popup__save.css";
