@@ -12,21 +12,23 @@
 
         <header class="header page__header">
             <img src="images/logo.svg" alt="логотип" class="header__logo">
-            <div class="header__line"></div>
+
         </header>
 
         <main class="content page__content">
 
             <section class="profile">
-                <img src="images/avatar.jpg" alt="аватар" class="profile__avatar">
-                <div class="profile__info">
-                    <div class="profile__name">
-                        <h1 class="profile__title">Жак-Ив Кусто</h1>
-                        <button aria-label="edit" type="button" class="profile__edit-button blackout"></button>
+                <div class="profile__container">
+                    <img src="images/avatar.jpg" alt="аватар" class="profile__avatar">
+                    <div class="profile__info">
+                        <div class="profile__name">
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
+                            <button aria-label="редактировать" type="button" class="profile__edit-button blackout"></button>
+                        </div>
+                        <p class="profile__subtitle">Исследователь океана</p>
                     </div>
-                    <p class="profile__subtitle">Исследователь океана</p>
                 </div>
-                <button aria-label="add" type="button" class="profile__add-button blackout"></button>
+                <button aria-label="добавить" type="button" class="profile__add-button blackout"></button>
             </section>
 
             <section class="elements content__elements">
@@ -35,42 +37,42 @@
                         <img src="images/element-canada.jpg" alt="канада" class="element__image">
                         <div class="element__container">
                             <h2 class="element__title">Канада</h2>
-                            <button aria-label="like" type="button" class="element__like blackout"></button>
+                            <button aria-label="нравится" type="button" class="element__like blackout"></button>
                         </div>
                     </li>
                     <li class="element__item">
                         <img src="images/element-china.jpg" alt="китай" class="element__image">
                         <div class="element__container">
                             <h2 class="element__title">Китай</h2>
-                            <button aria-label="like" type="button" class="element__like blackout"></button>
+                            <button aria-label="нравится" type="button" class="element__like blackout"></button>
                         </div>
                     </li>
                     <li class="element__item">
                         <img src="images/element-dombai.jpg" alt="домбай" class="element__image">
                         <div class="element__container">
                             <h2 class="element__title">Домбай</h2>
-                            <button aria-label="like" type="button" class="element__like blackout"></button>
+                            <button aria-label="нравится" type="button" class="element__like blackout"></button>
                         </div>
                     </li>
                     <li class="element__item">
                         <img src="images/element-elbrus.jpg" alt="эльбрус" class="element__image">
                         <div class="element__container">
                             <h2 class="element__title">Гора Эльбрус</h2>
-                            <button aria-label="like" type="button" class="element__like blackout"></button>
+                            <button aria-label="нравится" type="button" class="element__like blackout"></button>
                         </div>
                     </li>
                     <li class="element__item">
                         <img src="images/element-karachaevsk.jpg" alt="карачаевск" class="element__image">
                         <div class="element__container">
                             <h2 class="element__title">Карачаево-Черкессия</h2>
-                            <button aria-label="like" type="button" class="element__like blackout"></button>
+                            <button aria-label="нравится" type="button" class="element__like blackout"></button>
                         </div>
                     </li>
                     <li class="element__item">
                         <img src="images/element-vitebsk.jpg" alt="витебск" class="element__image">
                         <div class="element__container">
                             <h2 class="element__title">Витебск</h2>
-                            <button aria-label="like" type="button" class="element__like blackout"></button>
+                            <button aria-label="нравится" type="button" class="element__like blackout"></button>
                         </div>
                     </li>
                 </ul>
@@ -82,15 +84,17 @@
             <p class="footer__copyright">© 2020 Mesto Russia</p>
         </footer>
 
-        <section class="popup">
-            <form name="name-about-me" class="popup__container">
-                <button type="button" aria-label="close" class="popup__close blackout"></button>
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" name="name" value="" required class="popup__input popup__input-name">
-                <input type="text" name="about-me" value="" required class="popup__input popup__input-about-me">
-                <button type="submit" class="popup__save blackout">Сохранить</button>
-            </form>
-        </section>
+        <div class="popup">
+            <div class="popup__modal">
+                <button type="button" aria-label="закрыть" class="popup__close blackout"></button>
+                <form name="name-about-me" class="popup__form">
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <input type="text" name="name" value="" required class="popup__input popup__input_theme_name">
+                    <input type="text" name="about-me" value="" required class="popup__input popup__input_theme_about-me">
+                    <button type="submit" aria-label="сохранить" class="popup__save">Сохранить</button>
+                </form>
+            </div>
+        </div>
 
     </div>
 

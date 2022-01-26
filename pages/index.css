@@ -13,7 +13,6 @@
 
 @import "../blocks/header/header.css";
 @import "../blocks/header/__logo/header__logo.css";
-@import "../blocks/header/__line/header__line.css";
 
 /*content*/
 
@@ -23,6 +22,7 @@
 /*profile*/
 
 @import "../blocks/profile/profile.css";
+@import "../blocks/profile/__container/profile__container.css";
 @import "../blocks/profile/__avatar/profile__avatar.css";
 @import "../blocks/profile/__info/profile__info.css";
 @import "../blocks/profile/__name/profile__name.css";
@@ -50,8 +50,9 @@
 /*popup*/
 
 @import "../blocks/popup/popup.css";
+@import "../blocks/popup/__modal/popup__modal.css";
 @import "../blocks/popup/_opened/popup_opened.css";
-@import "../blocks/popup/__container/popup__container.css";
+@import "../blocks/popup/__form/popup__form.css";
 @import "../blocks/popup/__close/popup__close.css";
 @import "../blocks/popup/__title/popup__title.css";
 @import "../blocks/popup/__input/popup__input.css";

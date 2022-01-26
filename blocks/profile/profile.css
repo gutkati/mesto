@@ -3,7 +3,7 @@
     min-height: 120px;
     display: flex;
     align-items: center;
-    position: relative;
+    justify-content: space-between;
     margin: 0 auto;
 }
 
@@ -23,11 +23,5 @@
     .profile {
         width: 100%;
         flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .profile {
-        height: 286px;
     }
 }
