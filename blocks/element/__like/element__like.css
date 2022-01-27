@@ -9,8 +9,15 @@
     background-position: center;
     background-size: 22px;
     padding: 0;
+    opacity: 1;
+    transition: opacity .2s ease .1s;
+    cursor: pointer;
 }
 
 .element__like:active {
     background-image: url("../../../images/like-active.svg");
+}
+
+.element__like:hover {
+    opacity: .5;
 }
