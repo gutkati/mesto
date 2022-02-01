@@ -14,10 +14,6 @@
     cursor: pointer;
 }
 
-.element__like:active {
-    background-image: url("../../../images/like-active.svg");
-}
-
 .element__like:hover {
     opacity: .5;
 }

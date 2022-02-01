@@ -1,0 +1,12 @@
+.popup-big-image__figure {
+    width: 100%;
+    min-height: 562px;
+    margin: 0;
+}
+
+@media screen and (max-width: 650px) {
+    .popup-big-image__figure {
+        width: 100%;
+        min-height: 320px;
+    }
+}

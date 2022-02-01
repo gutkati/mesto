@@ -37,10 +37,12 @@
 @import "../blocks/elements/elements.css";
 @import "../blocks/element/element.css";
 @import "../blocks/element/__item/element__item.css";
+@import "../blocks/element/__delete/element__delete.css";
 @import "../blocks/element/__image/element__image.css";
 @import "../blocks/element/__container/element__container.css";
 @import "../blocks/element/__title/element__title.css";
 @import "../blocks/element/__like/element__like.css";
+@import "../blocks/element/__like-active/element__like-active.css";
 
 /*footer*/
 
@@ -57,3 +59,13 @@
 @import "../blocks/popup/__title/popup__title.css";
 @import "../blocks/popup/__input/popup__input.css";
 @import "../blocks/popup/__save/popup__save.css";
+
+/*popup-big-image*/
+
+@import "../blocks/popup-big-image/popup-big-image.css";
+@import "../blocks/popup-big-image/__modal/popup-big-image__modal.css";
+@import "../blocks/popup-big-image/__close/popup-big-image__close.css";
+@import "../blocks/popup-big-image/__figure/popup-big-image__figure.css";
+@import "../blocks/popup-big-image/__photo/popup-big-image__photo.css";
+@import "../blocks/popup-big-image/__subtitle/popup-big-image__subtitle.css";
+@import "../blocks/popup-big-image/_opened/popup-big-image_opened.css";
