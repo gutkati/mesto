@@ -1,13 +1,13 @@
 //Проектная работа 4
 
-let openPopupButton = document.querySelector('.profile__edit-button');
-let popup = document.querySelector('.popup');
-let closePopupButton = document.querySelector('.popup__close');
-let profileTitle = document.querySelector('.profile__title');
-let profileSubtitle = document.querySelector('.profile__subtitle');
-let inputName = document.querySelector('.popup__input_theme_name');
-let inputAboutMe = document.querySelector('.popup__input_theme_about-me');
-let submitPopupContainer = document.querySelector('.popup__form');
+const openPopupButton = document.querySelector('.profile__edit-button');
+const popup = document.querySelector('.popup');
+const closePopupButton = document.querySelector('.popup__close');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
+const inputName = document.querySelector('.popup__input_theme_name');
+const inputAboutMe = document.querySelector('.popup__input_theme_about-me');
+const submitPopupContainer = document.querySelector('.popup__form');
 
 
 function openPopup() {
@@ -76,7 +76,6 @@ const popupCloseTypeCard = document.querySelector('.popup__close_type_card');
 const inputCardName = document.querySelector('.popup__input_type_card-name');
 const inputCardLink = document.querySelector('.popup__input_type_card-link');
 const popupSubmitTypeCard = document.querySelector('.popup__form_type_card');
-const popupChangeTypeCard = document.querySelector('.popup__save_type_card');
 
 
 function render() {                          //функция перебирает элементы массива
@@ -112,23 +111,23 @@ function ClosePopupBigImage() {                    //функция закрыв
     popupBigImage.classList.toggle('popup-big-image_opened');
 }
 
-function openClosePopupTypeCard() {                //функция открывает и закрывает popup  TypeCard
+function openClosePopupTypeCard() {                //функция открывает и закрывает popup TypeCard
     popupTypeCard.classList.toggle('popup_opened');
 }
 
-function changeNewElement(evt) {
+function changeNewElement(evt) {                  //функция создает новый элемент, при введении пользователем данных в input
     evt.preventDefault()
     const newElement = elementTemplate.cloneNode(true);       // клонирует разметку, которая лежит в template со всем содержимым
-    newElement.querySelector('.element__title').textContent = inputCardName.value;  //вытаскивет элемент из кода и в его атрибут подставляем нужное значение из массива
+    newElement.querySelector('.element__title').textContent = inputCardName.value;  //вытаскивет элемент из кода и в его атрибут подставляет нужное значение из input
     newElement.querySelector('.element__image').src = inputCardLink.value;
-    newElement.querySelector('.element__like').addEventListener('click', function (event) {   //при нажатии делает лайк активным
+    newElement.querySelector('.element__like').addEventListener('click', function (event) {   //добавить лайк в новый элемент (при нажатии делает лайк активным)
         event.target.classList.toggle('element__like-active');
     });
-    newElement.querySelector('.element__delete').addEventListener('click', function (event) {   //при на жатии на корзину удаляет элемент
+    newElement.querySelector('.element__delete').addEventListener('click', function (event) {   //добавить корзину в новый элемент (при на жатии на корзину удаляет элемент)
         event.target.closest('.element__item').remove();
     });
     element.prepend(newElement);    //добавить элемент первым на страницу
-    inputCardName.value = '';
+    inputCardName.value = '';       //значение input вернуть в исходное значение
     inputCardLink.value = '';
     openClosePopupTypeCard()        //вызвать функцию закрытия popup
 }

@@ -4,7 +4,14 @@
     margin: 0;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1279px) {
+    .popup-big-image__figure {
+        max-width: 75vw;
+        max-height: 75vh;
+    }
+}
+
+@media screen and (max-width: 450px) {
     .popup-big-image__figure {
         width: 100%;
         min-height: 320px;
