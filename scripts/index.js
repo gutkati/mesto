@@ -110,7 +110,7 @@ function changeNewElement(evt) {                  //функция создае�
             link: inputCardLink.value
         };
     renderElement(newValue);
-    inputCardName.value = '';       //возвращает input вернуть к исходному значению
+    inputCardName.value = '';       //возвращает input к исходному значению
     inputCardLink.value = '';
     openClosePopup(popupTypeCard);
 }
