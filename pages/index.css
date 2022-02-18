@@ -64,3 +64,6 @@
 @import "../blocks/popup/__figure/popup__figure.css";
 @import "../blocks/popup/__photo/popup__photo.css";
 @import "../blocks/popup/__subtitle/popup__subtitle.css";
+@import "../blocks/popup/__input-error/popup__input-error.css";
+@import "../blocks/popup/__save/_disabled/popup__save_disabled.css";
+@import "../blocks/popup/__input/_type_error/popup__input_type_error.css";

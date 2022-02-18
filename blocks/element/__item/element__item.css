@@ -1,7 +1,8 @@
 .element__item {
+    display: flex;
+    flex-direction: column;
     list-style: none;
     width: 282px;
-    background-color: #ffffff;
     border-radius: 10px;
     position: relative;
     color: #FFFFFF;
