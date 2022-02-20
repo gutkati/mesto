@@ -48,10 +48,14 @@
                 <button type="button" aria-label="закрыть" class="popup__close blackout"></button>
                 <form name="name-about-me" class="popup__form popup__form_type_profile" novalidate>
                     <h2 class="popup__title">Редактировать профиль</h2>
-                    <input type="text" name="profile-name-input" value="" placeholder="Имя" minlength="2" maxlength="40" required class="popup__input popup__input_theme_name">
-                    <span id="error-profile-name" class="profile-name-input-error popup__input-error"></span>
-                    <input type="text" name="profile-about-me-input" value="" placeholder="О себе" minlength="2" maxlength="200" required class="popup__input popup__input_theme_about-me">
-                    <span id="error-profile-about-me" class="profile-about-me-input-error popup__input-error"></span>
+                    <div class="popup__input-container">
+                        <input type="text" name="profile-name-input" value="" placeholder="Имя" minlength="2" maxlength="40" required class="popup__input popup__input_theme_name">
+                        <span class="profile-name-input-error popup__error popup__error_visible"></span>
+                    </div>
+                    <div class="popup__input-container">
+                        <input type="text" name="profile-about-me-input" value="" placeholder="О себе" minlength="2" maxlength="200" required class="popup__input popup__input_theme_about-me">
+                        <span class="profile-about-me-input-error popup__error popup__error_visible"></span>
+                    </div>
                     <button type="submit" aria-label="сохранить" class="popup__save  popup__save_type_profile">Сохранить</button>
                 </form>
             </div>
@@ -62,10 +66,14 @@
                 <button type="button" aria-label="закрыть" class="popup__close popup__close_type_card blackout"></button>
                 <form name="new-element-image" class="popup__form popup__form_type_card" novalidate>
                     <h2 class="popup__title">Новое место</h2>
-                    <input type="text" name="card-name-input" value="" placeholder="Название" minlength="2" maxlength="30" required class="popup__input popup__input_type_card-name">
-                    <span class="card-name-input-error popup__input-error"></span>
-                    <input type="url" name="card-link-input" value="" placeholder="Ссылка на картинку" required class="popup__input popup__input_type_card-link">
-                    <span class="card-link-input-error popup__input-error"></span>
+                    <div class="popup__input-container">
+                        <input type="text" name="card-name-input" value="" placeholder="Название" minlength="2" maxlength="30" required class="popup__input popup__input_type_card-name">
+                        <span class="card-name-input-error popup__error popup__error_visible"></span>
+                    </div>
+                    <div class="popup__input-container">
+                        <input type="url" name="card-link-input" value="" placeholder="Ссылка на картинку" required class="popup__input popup__input_type_card-link">
+                        <span class="card-link-input-error popup__error popup__error_visible"></span>
+                    </div>
                     <button type="submit" aria-label="создать" class="popup__save  popup__save_type_card">Создать</button>
                 </form>
             </div>

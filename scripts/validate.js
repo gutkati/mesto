@@ -1,12 +1,14 @@
 const showInputError = (config, formElement, inputElement, errorMessage) => {        //  добавить модификатор ошибки
     const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
     inputElement.classList.add(config.inputErrorClass);
+    errorElement.classList.add(config.errorClass);
     errorElement.textContent = errorMessage;
 }
 
 const hideInputError = (config, formElement, inputElement) => {        // удалить модификатор ошибки
     const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
     inputElement.classList.remove(config.inputErrorClass);
+    errorElement.classList.remove(config.errorClass);
     errorElement.textContent = '';
 };
 
@@ -38,8 +40,6 @@ function setEventListeners(config, formElement) {      //проверка инп
     const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));  //массив инпутов
     const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
-    toggleButtonState(config, inputList, buttonElement);
-
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
             checkInputValidity(formElement, inputElement);
@@ -49,7 +49,6 @@ function setEventListeners(config, formElement) {      //проверка инп
     });
 
 }
-
 function enableValidation (config) {                //пройтись по формам и применить проверку на валидность
     const formList = Array.from(document.querySelectorAll(config.formSelector));   //массив форм
     formList.forEach((formElement) => {
@@ -66,4 +65,5 @@ enableValidation(config = {
   submitButtonSelector: '.popup__save',
   inactiveButtonClass: 'popup__save_disabled',
   inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
 });

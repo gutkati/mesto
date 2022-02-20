@@ -1,4 +1,3 @@
-const page = document.querySelector('.page');
 const popupTypeProfile = document.querySelector('.popup_type_profile');
 const popupButtonOpen = document.querySelector('.profile__edit-button');
 const popupButtonClose = document.querySelector('.popup__close');
@@ -26,17 +25,24 @@ const inputCardName = document.querySelector('.popup__input_type_card-name');
 const inputCardLink = document.querySelector('.popup__input_type_card-link');
 const popupSubmitTypeCard = document.querySelector('.popup__form_type_card');
 
+function addListenersOverlayEsc(elementName) {
+    elementName.addEventListener('click', closePopupOverlay);
+    document.addEventListener('keydown', closePopupEsc);
+}
+
+function removeListenersOverlayEsc(elementName) {
+    elementName.removeEventListener('click', closePopupOverlay);
+    document.removeEventListener('keydown', closePopupEsc);
+}
 
 function openPopup(elementName) {                  //функция открытия попапа
     elementName.classList.add('popup_opened');
-    elementName.addEventListener('click', closePopupOverlay);
-    page.addEventListener('keydown', closePopupEsc);
+    addListenersOverlayEsc(elementName);
 }
 
 function closePopup(elementName) {                 //функция закрытия попапа
     elementName.classList.remove('popup_opened');
-    elementName.removeEventListener('click', closePopupOverlay);
-    page.removeEventListener('keydown', closePopupEsc);
+    removeListenersOverlayEsc(elementName);
 }
 
 function closePopupOverlay(evt) {       //закрывает попап при на жатии мышью в любом месте экрана
