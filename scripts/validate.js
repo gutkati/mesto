@@ -1,21 +1,21 @@
 const showInputError = (config, formElement, inputElement, errorMessage) => {        //  добавить модификатор ошибки
-    const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
+    const errorElement = formElement.querySelector(`.${inputElement.name}-error`);  //добавить уникальный класс(name-class) с префиксом error из span
     inputElement.classList.add(config.inputErrorClass);
     errorElement.classList.add(config.errorClass);
     errorElement.textContent = errorMessage;
 }
 
 const hideInputError = (config, formElement, inputElement) => {        // удалить модификатор ошибки
-    const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
+    const errorElement = formElement.querySelector(`.${inputElement.name}-error`);  //удалить name-class
     inputElement.classList.remove(config.inputErrorClass);
     errorElement.classList.remove(config.errorClass);
     errorElement.textContent = '';
 };
 
 const checkInputValidity = (formElement, inputElement) => {      //проверить валидность ввода
-    if (!inputElement.validity.valid) {
+    if (!inputElement.validity.valid) {        //если input невалидный, добавить класс с модификатором ошибки
         showInputError(config, formElement, inputElement, inputElement.validationMessage)
-    } else {
+    } else {                                                   //иначе удалить
         hideInputError(config, formElement, inputElement)
     }
 };

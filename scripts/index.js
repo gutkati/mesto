@@ -25,12 +25,12 @@ const inputCardName = document.querySelector('.popup__input_type_card-name');
 const inputCardLink = document.querySelector('.popup__input_type_card-link');
 const popupSubmitTypeCard = document.querySelector('.popup__form_type_card');
 
-function addListenersOverlayEsc(elementName) {
+function addListenersOverlayEsc(elementName) {                  //навешиваем слушатель на overlay и esc
     elementName.addEventListener('click', closePopupOverlay);
     document.addEventListener('keydown', closePopupEsc);
 }
 
-function removeListenersOverlayEsc(elementName) {
+function removeListenersOverlayEsc(elementName) {              //удаляем слушаткль overlay и esc
     elementName.removeEventListener('click', closePopupOverlay);
     document.removeEventListener('keydown', closePopupEsc);
 }
