@@ -1,4 +1,4 @@
-const showInputError = (config, formElement, inputElement, errorMessage) => {        //  добавить модификатор ошибки
+/*const showInputError = (config, formElement, inputElement, errorMessage) => {        //  добавить модификатор ошибки
     const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
     inputElement.classList.add(config.inputErrorClass);
     errorElement.textContent = errorMessage;
@@ -67,3 +67,4 @@ enableValidation(config = {
   inactiveButtonClass: 'popup__save_disabled',
   inputErrorClass: 'popup__input_type_error',
 });
+*/
