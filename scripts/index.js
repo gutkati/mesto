@@ -1,5 +1,6 @@
-import { Card, initialCards } from './Card.js';
+import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
+import { initialCards } from './constants.js';
 
 
 const page = document.querySelector('.page');
@@ -73,16 +74,13 @@ function closePopupEsc (evt) {         //закрывает попап при н
 //popup type Profile
 
 function openPopupTypeProfile() {
-    openPopup(popupTypeProfile);//функция добавляет класс для открытия popup окна
+
     inputName.value = profileTitle.textContent;       //вставляет текст контент из элемента profile__title в окно ввода popup__input_theme_name
     inputAboutMe.value = profileSubtitle.textContent; //вставляет текст контент из элемента profile__subtitle в окно ввода popup__input_theme_about-me
 
-    const elementInput = popupTypeProfile.querySelectorAll(config.inputSelector);         // вызвать функцию удаления сообщений об ошибках
-    elementInput.forEach((inputElement) => {
-        editProfileValidator.hideInputError(inputElement)
-    });
+    editProfileValidator.resetValidation()    // вызываем метод очитски ошибок и управление состоянием кнопки
 
-    editProfileValidator.toggleButtonState()
+    openPopup(popupTypeProfile);              //функция добавляет класс для открытия popup окна
 }
 
 function savePopupTypeProfile(evt) {
@@ -103,18 +101,18 @@ submitPopupContainer.addEventListener('submit', savePopupTypeProfile); //реа�
 
 //добывление template-элементов на страницу
 
-initialCards.forEach(renderElement)
+initialCards.forEach(renderCard)
 
-function renderElement(item) {
+function creatCard(item) {
         const card = new Card(item.name, item.link, '.element-template', openPopupTypeImage);
         const cardElement = card.generateCard();
 
-        createCard(cardElement, elementCard);
+        return cardElement;
 
 }
 
-function createCard(card, element) {   // функция добавляет карточку вначало
-    element.prepend(card);
+function renderCard(card) {   // функция добавляет карточку вначало
+    elementCard.prepend(creatCard(card));
 
 }
 
@@ -139,21 +137,19 @@ function changeNewElement(evt) {                  //функция создае�
             name: inputCardName.value,
             link: inputCardLink.value
     };
-    renderElement(newValue);
+    renderCard(newValue);
     inputCardName.value = '';       //возвращает input к исходному значению
     inputCardLink.value = '';
     closePopup(popupTypeCard);
 }
 
 profileAddButton.addEventListener('click', function () {
-    openPopup(popupTypeCard);
-    popupSubmitTypeCard.reset();       //возвращает input к исходному значению
-    const elementInput = popupTypeCard.querySelectorAll(config.inputSelector);         // вызвать функцию удаления сообщений об ошибках
-    elementInput.forEach((inputElement) => {
-        addCardValidator.hideInputError(inputElement)
-    });
 
-    addCardValidator.toggleButtonState()
+    popupSubmitTypeCard.reset();       //возвращает input к исходному значению
+
+    addCardValidator.resetValidation()  // вызываем метод очитски ошибок и управление состоянием кнопки
+
+    openPopup(popupTypeCard);
 });
 
 popupCloseTypeCard.addEventListener('click', function () {

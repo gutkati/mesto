@@ -1,30 +1,3 @@
-export const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 export class Card {
   constructor(name, link, cardSelector, openPopupTypeImage) {
     this._name = name;
@@ -44,32 +17,37 @@ export class Card {
   }
 
   generateCard() {
-    this._element = this._getTemplate();   //запишем разметку в приватное поле _element, так у других элементов появится доступ к ней
-    this._addListeners();
+    this._element = this._getTemplate();//запишем разметку в приватное поле _element, так у других элементов появится доступ к ней
+    this._cardImage =  this._element.querySelector('.element__image'); // создать классовую переменную до объявления функции, в которой она используется
+    this._setEventListeners();
 
     this._element.querySelector('.element__title').textContent = this._name;   //добавим данные
-    this._element.querySelector('.element__image').src = this._link;
-    this._element.querySelector('.element__image').alt = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
 
     return this._element;            //вернем элемент наружу
   }
 
   _likePut() {
-    this._element.querySelector('.element__like').classList.toggle('element__like-active');
+    this._elementLike.classList.toggle('element__like-active');
   }
 
-  _basketDelete() {
-    this._element.querySelector('.element__delete').closest('.element__item').remove();
+  _basketDelete() {          //удалить экземпляр класса и занулить, чтобы объект карточкинеоставался впамяти приложения
+    this._element.remove();
+    this._element = null;
   }
 
-  _addListeners() {
-    this._element.querySelector('.element__like').addEventListener('click', () => {
+  _setEventListeners() {
+    this._elementLike = this._element.querySelector('.element__like');  //создать классовую переменную
+    this._elementLike.addEventListener('click', () => {
       this._likePut();
     });
+
     this._element.querySelector('.element__delete').addEventListener('click', () => {
       this._basketDelete();
     });
-    this._element.querySelector('.element__image').addEventListener('click', () => {
+
+    this._cardImage.addEventListener('click', () => {
       this._openPopupTypeImage(this._name, this._link);
     });
   }

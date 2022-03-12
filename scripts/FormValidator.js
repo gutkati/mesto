@@ -13,7 +13,7 @@ export class FormValidator {
         errorElement.textContent = errorMessage;
     }
 
-    hideInputError(inputElement) {        // удалить модификатор ошибки
+    _hideInputError(inputElement) {        // удалить модификатор ошибки
         const errorElement = this._formElement.querySelector(`.${inputElement.name}-error`);
         inputElement.classList.remove(this._data.inputErrorClass);
         errorElement.classList.remove(this._data.errorClass);
@@ -24,7 +24,7 @@ export class FormValidator {
         if (!inputElement.validity.valid) {
             this._showInputError(inputElement, inputElement.validationMessage)
         } else {
-            this.hideInputError(inputElement);
+            this._hideInputError(inputElement);
         }
     };
 
@@ -42,6 +42,15 @@ export class FormValidator {
             this._buttonElement.classList.remove(this._data.inactiveButtonClass);
             this._buttonElement.removeAttribute('disabled')
         }
+    }
+
+    resetValidation() {           //метод очитска ошибок и упавление состоянием кнопки
+      this.toggleButtonState(); //управляем кнопкой
+
+      this._inputList.forEach((inputElement) => {
+        this._hideInputError(inputElement) //очищаем ошибки
+      });
+
     }
 
     _setEventListeners() {      //проверка инпутов на валидность
