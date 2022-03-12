@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 import { Card, initialCards } from './Card.js';
 import { FormValidator } from './FormValidator.js';
 
 
 const page = document.querySelector('.page');
->>>>>>> develop
 const popupTypeProfile = document.querySelector('.popup_type_profile');
 const popupButtonOpen = document.querySelector('.profile__edit-button');
 const popupButtonClose = document.querySelector('.popup__close');
@@ -32,17 +29,6 @@ const inputCardName = document.querySelector('.popup__input_type_card-name');
 const inputCardLink = document.querySelector('.popup__input_type_card-link');
 const popupSubmitTypeCard = document.querySelector('.popup__form_type_card');
 
-<<<<<<< HEAD
-function addListenersOverlayEsc(elementName) {                  //навешиваем слушатель на overlay и esc
-    elementName.addEventListener('click', closePopupOverlay);
-    document.addEventListener('keydown', closePopupEsc);
-}
-
-function removeListenersOverlayEsc(elementName) {              //удаляем слушаткль overlay и esc
-    elementName.removeEventListener('click', closePopupOverlay);
-    document.removeEventListener('keydown', closePopupEsc);
-}
-=======
 const config = {
         formSelector: '.popup__form',
         inputSelector: '.popup__input',
@@ -58,16 +44,17 @@ const addCardValidator = new FormValidator(config, popupTypeCard);
 editProfileValidator.enableValidation();   //вызвать метод проверки на валидность из класса FormValidator
 addCardValidator.enableValidation();
 
->>>>>>> develop
 
 function openPopup(elementName) {                  //функция открытия попапа
     elementName.classList.add('popup_opened');
-    addListenersOverlayEsc(elementName);
+    elementName.addEventListener('click', closePopupOverlay);
+    page.addEventListener('keydown', closePopupEsc);
 }
 
 function closePopup(elementName) {                 //функция закрытия попапа
     elementName.classList.remove('popup_opened');
-    removeListenersOverlayEsc(elementName);
+    elementName.removeEventListener('click', closePopupOverlay);
+    page.removeEventListener('keydown', closePopupEsc);
 }
 
 function closePopupOverlay(evt) {       //закрывает попап при на жатии мышью в любом месте экрана
