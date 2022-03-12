@@ -6,6 +6,8 @@ export class FormValidator {
         this._buttonElement = this._formElement.querySelector(this._data.submitButtonSelector);
     }
 
+
+
     _showInputError(inputElement, errorMessage) {        //  добавить модификатор ошибки
         const errorElement = this._formElement.querySelector(`.${inputElement.name}-error`);
         inputElement.classList.add(this._data.inputErrorClass);
