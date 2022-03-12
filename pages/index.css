@@ -59,6 +59,7 @@
 @import "../blocks/popup/__title/popup__title.css";
 @import "../blocks/popup/__input-container/popup__input-container.css";
 @import "../blocks/popup/__input/popup__input.css";
+@import "../blocks/popup/__input-container/popup__input-container.css";
 @import "../blocks/popup/__save/popup__save.css";
 @import "../blocks/popup/_type/popup_type_image.css";
 @import "../blocks/popup/__modal-image/popup__modal-image.css";

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 const showInputError = (config, formElement, inputElement, errorMessage) => {        //  добавить модификатор ошибки
     const errorElement = formElement.querySelector(`.${inputElement.name}-error`);  //добавить уникальный класс(name-class) с префиксом error из span
+=======
+/*const showInputError = (config, formElement, inputElement, errorMessage) => {        //  добавить модификатор ошибки
+    const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
+>>>>>>> develop
     inputElement.classList.add(config.inputErrorClass);
     errorElement.classList.add(config.errorClass);
     errorElement.textContent = errorMessage;
@@ -65,5 +70,10 @@ enableValidation(config = {
   submitButtonSelector: '.popup__save',
   inactiveButtonClass: 'popup__save_disabled',
   inputErrorClass: 'popup__input_type_error',
+<<<<<<< HEAD
   errorClass: 'popup__error_visible'
 });
+=======
+});
+*/
+>>>>>>> develop
