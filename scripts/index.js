@@ -17,7 +17,6 @@ const inputName = document.querySelector('.popup__input_theme_name');
 const inputAboutMe = document.querySelector('.popup__input_theme_about-me');
 const submitPopupContainer = document.querySelector('.popup__form');
 
-const elementTemplate = document.querySelector('.element-template').content; // вытащили контент template
 const elementCard = document.querySelector('.element');  //вставлять новую разметку в код
 
 const popupTypeImage = document.querySelector('.popup_type_image');
