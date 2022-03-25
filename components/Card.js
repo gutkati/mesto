@@ -1,9 +1,9 @@
 export class Card {
-  constructor(name, link, cardSelector, openPopupTypeImage) {
+  constructor(name, link, cardSelector, handleCardClick) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
-    this._openPopupTypeImage = openPopupTypeImage;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {             //забираем разметку из HTML и клонтруем элемент
@@ -28,6 +28,7 @@ export class Card {
     return this._element;            //вернем элемент наружу
   }
 
+
   _likePut() {
     this._elementLike.classList.toggle('element__like-active');
   }
@@ -48,7 +49,7 @@ export class Card {
     });
 
     this._cardImage.addEventListener('click', () => {
-      this._openPopupTypeImage(this._name, this._link);
+      this._handleCardClick(this._name, this._link);
     });
   }
 

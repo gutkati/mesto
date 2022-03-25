@@ -1,0 +1,19 @@
+{
+  "name": "mesto",
+  "version": "0.0.1",
+  "description": "Проект создан на базе обучающего курса [Яндекс.Практикум](https://practicum.yandex.ru/profile/web/) веб разработчик. Спринт 4 и спринт 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gutkati/mesto.git"
+  },
+  "author": "Ekaterina Shmeleva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gutkati/mesto/issues"
+  },
+  "homepage": "https://github.com/gutkati/mesto#readme"
+}
