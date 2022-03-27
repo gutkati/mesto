@@ -24,3 +24,32 @@ export const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+export const popupTypeProfile = document.querySelector('.popup_type_profile');
+export const popupButtonOpen = document.querySelector('.profile__edit-button');
+
+export const profileTitle = document.querySelector('.profile__title');
+export const profileSubtitle = document.querySelector('.profile__subtitle');
+
+export const inputName = document.querySelector('.popup__input_theme_name');
+export const inputAboutMe = document.querySelector('.popup__input_theme_about-me');
+
+export const elementCard = document.querySelector('.element');  //вставлять новую разметку в код
+
+export const popupTypeImage = document.querySelector('.popup_type_image');
+
+export const profileAddButton = document.querySelector('.profile__add-button');
+
+export const popupTypeCard = document.querySelector('.popup_type_card');
+
+export const formTypeCard = document.querySelector('.popup__form_type_card');
+export const formTypeProfile = document.querySelector('.popup__form_type_profile');
+
+export const config = {
+        formSelector: '.popup__form',
+        inputSelector: '.popup__input',
+        submitButtonSelector: '.popup__save',
+        inactiveButtonClass: 'popup__save_disabled',
+        inputErrorClass: 'popup__input_type_error',
+        errorClass: 'popup__error_visible'
+};
