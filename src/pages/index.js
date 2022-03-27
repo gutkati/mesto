@@ -21,7 +21,7 @@ import {
     config
 } from "../utils/constants.js"
 
-
+import '../pages/index.css';
 //typeProfile
 
 const userInfo = new UserInfo(profileTitle, profileSubtitle)
