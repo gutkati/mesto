@@ -64,7 +64,6 @@ export class FormValidator {
                 this.toggleButtonState();
             });
         });
-
     }
 
     enableValidation() {                //пройтись по формам и применить проверку на валидность

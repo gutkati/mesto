@@ -15,4 +15,5 @@ export default class UserInfo {
         this._profileTitle.textContent = input.name;
         this._profileSubtitle.textContent = input.about;
     }
+
 }

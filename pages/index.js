@@ -94,7 +94,6 @@ profileAddButton.addEventListener('click', () => {
 const typeImagePopup = new PopupWithImage(popupTypeImage)
 typeImagePopup.setEventListeners();
 
-
 function handleCardClick(name, link) {
     typeImagePopup.open(name, link);
 }

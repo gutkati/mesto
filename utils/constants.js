@@ -23,6 +23,7 @@ export const initialCards = [
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
+
 ];
 
 export const popupTypeProfile = document.querySelector('.popup_type_profile');
