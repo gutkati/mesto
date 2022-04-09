@@ -23,6 +23,7 @@
 
 @import "../blocks/profile/profile.css";
 @import "../blocks/profile/__container/profile__container.css";
+@import "../blocks/profile/__container-avatar/profile__container-avatar.css";
 @import "../blocks/profile/__avatar/profile__avatar.css";
 @import "../blocks/profile/__info/profile__info.css";
 @import "../blocks/profile/__name/profile__name.css";
@@ -41,8 +42,10 @@
 @import "../blocks/element/__image/element__image.css";
 @import "../blocks/element/__container/element__container.css";
 @import "../blocks/element/__title/element__title.css";
+@import "../blocks/element/__section-like/element__section-like.css";
 @import "../blocks/element/__like/element__like.css";
 @import "../blocks/element/__like-active/element__like-active.css";
+@import "../blocks/element/__like-number/element__like-number.css";
 
 /*footer*/
 
