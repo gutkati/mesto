@@ -33,16 +33,14 @@ let userId
 
 api.getProfile()
     .then(res => {
-        console.log(res)
         userInfo.setUserInfo(res)
-
         userId = res._id
     })
     .catch((err) => console.log(err))
 
 api.getInitialCards()
     .then(cardServer => {
-        console.log('cardServer', cardServer)
+        //console.log('cardServer', cardServer)
         cardServer.forEach(data => {
             const newCard = creatCard(data);
             defaultCardList.addItem(newCard)
@@ -65,8 +63,8 @@ typeProfilePopup.setEventListeners();
 function editProfile(data) {//редактирование профиля
     typeProfilePopup.renderLoading(true);
     api.editProfile(data)
-        .then(() => {
-           userInfo.setUserInfo(data);
+        .then((res) => {
+           userInfo.setUserInfo(res);
            typeProfilePopup.close();
         })
         .catch((err) => console.log(err))
@@ -94,7 +92,6 @@ function editAvatar(data) {
     typeProfilePopupAvatar.renderLoading(true)
     api.newAvatar(data)
         .then(res => {
-            console.log('res', res)
             userInfo.setUserInfo(res);
             typeProfilePopupAvatar.close();
         })
