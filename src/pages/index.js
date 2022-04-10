@@ -5,6 +5,7 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { api } from "../components/Api.js";
+import { ConfirmationPopup } from "../components/ConfirmationPopup.js"
 import {
     initialCards,    //массив
     popupTypeProfile,
@@ -29,9 +30,24 @@ import {
 
 import '../pages/index.css';
 
+
 let userId
 
-api.getProfile()
+Promise.all([api.getProfile(), api.getInitialCards()])
+  .then(([res, cardServer]) => {
+      userInfo.setUserInfo(res)
+      userId = res._id
+
+      cardServer.forEach(data => {
+          const newCard = creatCard(data);
+          defaultCardList.addItem(newCard)
+      })
+  })
+  .catch(err => {
+    console.log(err)
+  });
+
+/*api.getProfile()
     .then(res => {
         userInfo.setUserInfo(res)
         userId = res._id
@@ -47,7 +63,7 @@ api.getInitialCards()
         })
     })
     .catch((err) => console.log(err))
-
+*/
 
 //typeProfile
 
@@ -174,7 +190,7 @@ function editCard(object) {
         .then((res) => {
 
             defaultCardList.addItem(creatCard(res, userId));
-
+            typeCardPopup.close()
         })
         .catch((err) => console.log(err))
         .finally(() => typeCardPopup.renderLoading(false))
@@ -183,7 +199,7 @@ function editCard(object) {
     object.owner._id = userId;
     object.likes = [];
 
-    typeCardPopup.close()
+
 
 }
 
@@ -195,7 +211,7 @@ profileAddButton.addEventListener('click', () => {
 
 // popup Type Remove-card
 
-const typeRemoveCard = new PopupWithForm(popupTypeRemoveCard)
+const typeRemoveCard = new ConfirmationPopup(popupTypeRemoveCard)
 typeRemoveCard.setEventListeners();     //метод закрытия кнопки
 
 

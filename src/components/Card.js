@@ -10,7 +10,6 @@ export class Card {
     this._handleCardClick = handleCardClick;
     this._handelDeleteClick = handleDeleteClick;
     this._handleLikeClick = handleLikeClick;
-
   }
 
   _getTemplate() {             //забираем разметку из HTML и клонтруем элемент
@@ -53,8 +52,9 @@ export class Card {
     this._elementLike.addEventListener('click', () => {
       this._handleLikeClick(this._id);
     });
+    this._elementDelete = this._element.querySelector('.element__delete');
 
-    this._element.querySelector('.element__delete').addEventListener('click', () => {
+    this._elementDelete.addEventListener('click', () => {
       this._handelDeleteClick(this._id);
     });
 
@@ -75,7 +75,7 @@ export class Card {
     this.setLikes(this._likes);
 
     if(this._ownerId !== this._userId) {     // проверить автора карточки
-      this._element.querySelector('.element__delete').style.display = 'none';   //скрыть корзину на карточке
+      this._elementDelete.style.display = 'none';   //скрыть корзину на карточке
     }
 
     return this._element;            //вернем элемент наружу

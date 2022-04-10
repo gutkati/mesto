@@ -4,18 +4,25 @@
          this._headers = headers;
      }
 
+     _checkResponse(res) {
+         if(res.ok) {
+             return res.json()
+         }
+         return Promise.reject(res.status)
+     }
+
      getProfile() {
          return fetch(`${this._baseUrl}/users/me`, {
              headers: this._headers
          })
-             .then((res) => res.ok ? res.json() : Promise.reject(res.status))
+             .then(this._checkResponse)
      }
 
      getInitialCards() {
          return fetch(`${this._baseUrl}/cards`, {
              headers: this._headers
          })
-             .then((res) => res.ok ? res.json() : Promise.reject(res.status)) //если сервер ответил успешно(ok) создаем из ответа объект, если нет то появляется ошибка
+             .then(this._checkResponse) //если сервер ответил успешно(ok) создаем из ответа объект, если нет то появляется ошибка
      }
 
      editProfile(data) {                      //метод редактирования профиля
@@ -27,7 +34,7 @@
                  about: data.about
              })
          })
-             .then((res) => res.ok ? res.json() : Promise.reject(res.status)) //если сервер ответил успешно(ok) создаем из ответа объект, если нет то появляется ошибка
+             .then(this._checkResponse) //если сервер ответил успешно(ok) создаем из ответа объект, если нет то появляется ошибка
      }
 
      addCard(name, link) {
@@ -39,7 +46,7 @@
                  link
              })
          })
-                 .then((res) => res.ok ? res.json() : Promise.reject(res.status))
+                 .then(this._checkResponse)
      }
 
      deleteCard(id) {
@@ -47,7 +54,7 @@
              method: "DELETE",
              headers: this._headers
              })
-             .then((res) => res.ok ? res.json() : Promise.reject(res.status))
+             .then(this._checkResponse)
      }
 
      deleteLike(id) {
@@ -55,7 +62,7 @@
              method: "DELETE",
              headers: this._headers
              })
-             .then((res) => res.ok ? res.json() : Promise.reject(res.status))
+             .then(this._checkResponse)
      }
 
      addLike(id) {
@@ -63,7 +70,7 @@
              method: "PUT",
              headers: this._headers
              })
-             .then((res) => res.ok ? res.json() : Promise.reject(res.status))
+             .then(this._checkResponse)
 
      }
 
@@ -75,7 +82,7 @@
                  avatar: data.avatar
              })
          })
-             .then((res) => res.ok ? res.json() : Promise.reject(res)) //если сервер ответил успешно(ok) создаем из ответа объект, если нет то появляется ошибка
+             .then(this._checkResponse) //если сервер ответил успешно(ok) создаем из ответа объект, если нет то появляется ошибка
 
      }
 
